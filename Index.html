@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Liquidify</title>
+</head>
+<body>
+    <header>
+        <h1>Liquidify</h1>
+        <button id="connectWallet">Connect Wallet</button>
+    </header>
+    <main>
+        <section id="tokenSwap">
+            <h2>Token Swap</h2>
+            <div>
+                <input type="text" id="fromToken" placeholder="From Token">
+                <input type="text" id="toToken" placeholder="To Token">
+                <button onclick="swapTokens()">Swap</button>
+            </div>
+        </section>
+        <section id="liquidityPools">
+            <h2>Liquidity Pools</h2>
+            <div>
+                <button onclick="addLiquidity()">Add Liquidity</button>
+                <button onclick="removeLiquidity()">Remove Liquidity</button>
+            </div>
+        </section>
+        <section id="transactionHistory">
+            <h2>Transaction History</h2>
+            <ul id="historyList"></ul>
+        </section>
+        <section id="tokenData">
+            <h3>Token Information</h3>
+            <p id="tokenDetails"></p>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
+<!-- Sliders for token amounts -->
+<input type="range" min="1" max="100" value="50" class="slider" id="tokenAmountSlider">
+<!-- Modal for transaction confirmation -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Confirm your transaction details here.</p>
+        <button onclick="confirmTransaction()">Confirm</button>
+    </div>
+</div>
